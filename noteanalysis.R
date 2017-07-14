@@ -26,3 +26,19 @@ matchwords <- c("recommend")
 recommend.notes <- notes[grep(paste(matchwords, collapse = "|"), notes$V2),]
 rowlocation <- which (notes$V1 %in% recommend.notes$V1)
 notes <- notes[-rowlocation,]
+
+#----
+  
+library("tidyverse")
+
+## Objects in current environment
+data <- ls()
+
+lengths <- map(data, .f = function(x) {
+  x <- get(x)
+  if ("data.frame" %in% class(x)) {
+    nrow(x)
+  }
+})
+
+unlist(lengths)
