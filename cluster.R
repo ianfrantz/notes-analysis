@@ -29,20 +29,20 @@ cluster <- function(matchwords) {
 
 #CLUSTER: Furniture Sales
 cluster (c("furniture","sale"))
-activiation.notes <- newfile
+furniture_sales.notes <- newfile
 
 #CLUSTER: Refund
 cluster (c("refund"))
-payment.notes <- newfile 
+refunds.notes <- newfile 
 
 #CLUSTER: Invoice
 cluster  (c("invoice"))
-pin.notes <- newfile 
+invoice.notes <- newfile 
 
 #CLUSTER: Return
 cluster  (c("return", "merch"))
-fee.notes <- newfile 
+returns.notes <- newfile 
 
 #CLUSTER: Delivery Problem
 cluster  (c("delivery","problem"))
-web.notes <- newfile 
+complaints.notes <- newfile 
