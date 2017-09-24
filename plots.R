@@ -1,7 +1,6 @@
-#Create plots
+#Plotting libraries
 library(ggplot2)
 library (purrr)
-
 
 #Find all data.frames in global and isolate clusternames
 clusternames <- names(which(unlist(eapply(.GlobalEnv,is.data.frame)))) 
@@ -23,7 +22,6 @@ data <- unlist(dataobs)
 results <- cbind(results, Data = data)
 results <- results[order(results$Data, decreasing = TRUE), ]
 
-
 #Create "resultsplot" vector with core plotting
 resultsplot <- ggplot(results, aes(x = Clusters, y = Data, fill = Data)) + 
   geom_bar(stat = "identity") +
@@ -31,11 +29,11 @@ resultsplot <- ggplot(results, aes(x = Clusters, y = Data, fill = Data)) +
   scale_fill_gradient(high = "red", low = "green") 
 
 #Manual Entries for Titles, Subtitles and Captions.
-plot1title <- readline("What should the of the plot be? ")
+plot1title <- readline("What should the title of the plot be? ")
 plot1subtitle <- readline("Add a subtitle? ")
 plot1caption <- readline("Add a caption? ")
 
-#Add Labeling for Aug 2017 
+#Add Labels
 resultsplot + labs(title = plot1title,
                    subtitle = plot1subtitle,
                    caption = plot1caption)
